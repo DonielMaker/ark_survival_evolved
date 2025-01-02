@@ -44,7 +44,8 @@ in
             serviceConfig = {
                 Type = "exec";
                 User = "junkyard";
-                ExecStart = "${pkgs.ark_survival_evolved-server}/ShooterGame/Binaries/Linux/ShooterGameServer TheIsland?listen?SessionName=Auschwitz?ServerPassword=69419?ServerAdminPassword=69420 -server -log";
+                # ExecStart = "${pkgs.ark_survival_evolved-server}/ShooterGame/Binaries/Linux/ShooterGameServer TheIsland?listen?SessionName=Auschwitz?ServerPassword=69419?ServerAdminPassword=69420 -server -log";
+                ExecStart = "${pkgs.hello}/bin/hello";
             };
         };
 
