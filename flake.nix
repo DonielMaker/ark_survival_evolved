@@ -1,0 +1,24 @@
+{
+    description = "Ark: Survival Evolved";
+
+    inputs = {
+        nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+        flake-utils.url = "github:numtide/flake-utils";
+        steam-fetcher = {
+            url = "github:aidalgol/nix-steam-fetcher";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+    };
+
+    outputs = { self, nixpkgs,flake-utils, steam-fetcher, ...}: {
+
+        nixosModules = rec {
+            ark_survival_evolved-server = import ./nixos/ark_survival_evolved-module.nix;
+            default = ark_survival_evolved-server;
+        };
+        overlays.default = final: prev: {
+            ark_survival_evolved-unwrapped = final.callPackage ./pkgs/ark_survival_evolved-server {};
+            ark_survival_evolved-server = final.callPackage ./pkgs/ark_survival_evolved-server/fhsenv.nix {};
+        };
+    };
+}
