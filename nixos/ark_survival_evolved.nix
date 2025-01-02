@@ -1,7 +1,7 @@
 { self, steam-fetcher, }: { config, pkgs, lib, ... }: 
 
 let
-  cfg = config.services.junkyard;
+  cfg = config.services.ark;
 in 
 
 {
