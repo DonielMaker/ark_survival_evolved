@@ -32,7 +32,7 @@ in
                 group = "ark";
                 home = /srv/ark;
             };
-            groups.junkyard = {};
+            groups.ark = {};
         };
 
         systemd.services.ark = {
