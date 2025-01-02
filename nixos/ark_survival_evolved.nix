@@ -30,6 +30,7 @@ in
             users.ark = {
                 isSystemUser = true;
                 group = "ark";
+                createHome = true;
                 home = /srv/ark;
             };
             groups.ark = {};
