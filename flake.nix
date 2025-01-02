@@ -13,7 +13,7 @@
     outputs = { self, nixpkgs,flake-utils, steam-fetcher, ...}: {
 
         nixosModules = rec {
-            ark_survival_evolved-server = import ./nixos/ark_survival_evolved-module.nix;
+            ark_survival_evolved-server = import ./nixos/ark_survival_evolved.nix;
             default = ark_survival_evolved-server;
         };
         overlays.default = final: prev: {
