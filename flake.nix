@@ -17,8 +17,8 @@
             default = ark_survival_evolved-server;
         };
         overlays.default = final: prev: {
-            ark_survival_evolved-unwrapped = final.callPackage ./pkgs/ark_survival_evolved-server {};
-            ark_survival_evolved-server = final.callPackage ./pkgs/ark_survival_evolved-server/fhsenv.nix {};
+            ark_survival_evolved-unwrapped = final.callPackage ./pkgs/ark_survival_evolved {};
+            ark_survival_evolved-server = final.callPackage ./pkgs/ark_survival_evolved/fhsenv.nix {};
         };
     };
 }
