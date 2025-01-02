@@ -13,8 +13,8 @@
     outputs = { self, nixpkgs, flake-utils, steam-fetcher}: {
 
         nixosModules = rec {
-            ark_survival_evolved-server = import ./nixos/ark_survival_evolved.nix {inherit self steam-fetcher;};
-            default = ark_survival_evolved-server;
+            ark_survival_evolved = import ./nixos/ark_survival_evolved.nix {inherit self steam-fetcher;};
+            default = ark_survival_evolved;
         };
         overlays.default = final: prev: {
             ark_survival_evolved-unwrapped = final.callPackage ./pkgs/ark_survival_evolved {};
