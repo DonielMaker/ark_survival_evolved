@@ -10,7 +10,7 @@
         };
     };
 
-    outputs = { self, nixpkgs, flake-utils, steam-fetcher, ...}: {
+    outputs = { self, nixpkgs, flake-utils, steam-fetcher}: {
 
         nixosModules = rec {
             ark_survival_evolved-server = import ./nixos/ark_survival_evolved.nix {inherit self steam-fetcher;};
